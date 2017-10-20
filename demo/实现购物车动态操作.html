@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09_实现购物车动态操作</title>
+    <script src="../jquery-1.12.4.js"></script>
+    <style>
+        table{width:600px; text-align:center;
+            border-collapse:collapse;
+            margin: 30px auto;
+        }
+        td,th{border:1px solid black}
+        td[colspan="3"]{text-align:right;}
+    </style>
+</head>
+<body>
+    <table id="data">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>小计</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>iPhone6</td>
+            <td>&yen;<span>4488</span></td>
+            <td>
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </td>
+            <td>&yen;<span>4488</span></td>
+        </tr>
+        <tr>
+            <td>iPhone6 plus</td>
+            <td>&yen;<span>5288</span></td>
+            <td>
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </td>
+            <td>&yen;<span>5288</span></td>
+        </tr>
+        <tr>
+            <td>iPad Air 2</td>
+            <td>&yen;<span>4288</span></td>
+            <td>
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </td>
+            <td>&yen;<span>4288</span></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total:</td>
+            <td>&yen;<span>14064</span></td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        /*
+            TODO 选择获取所有button按钮，绑定click事件
+            TODO 分别获取"-"的button按钮和"+"的button按钮，分别绑定click事件?
+         */
+/*
+
+
+        $('button').click(function () {
+            /!*判断点击的是＋还是-*!/
+            var num
+            if($(this).is(':contains(+)')){
+
+                num = parseInt($(this).prev('span').text())
+                num++
+                $(this).prev('span').text(num)
+                console.log(num);
+
+            }else {
+                num = parseInt($(this).next('span').text())
+                if(num > 1){
+                    num--
+                    $(this).next('span').text(num)
+                    console.log(num)
+
+                }
+            }
+
+            var price = parseInt($(this).parent('td').prev('td').children('span').text())
+            price = price * num
+            $(this).parent('td').next('td').children('span').text(price)
+
+            var $spans = $(this).parents('tbody').children('tr').children('td:last-child').children('span')
+            var nums = 0;
+            for(var i = 0;i<$spans.length;i++){
+                nums += parseInt($($spans[i]).text())
+            }
+            $(this).parents('tbody').next('tfoot').find('span').text(nums)
+
+
+        })
+*/
+
+
+        var $jian  = $('tbody').children('tr').children('td:nth-child(3)').children('button:first-child')
+        $jian.click(function () {
+            var num = parseInt($(this).next('span').text());
+            if(num >1){
+                num--;
+                $(this).next('span').text(num)
+                var price = parseInt($(this).parent('td').prev('td').children('span').text());
+                var newprice = num * price;
+                $(this).parent('td').next('td').children('span').text(newprice)
+            }
+            var $spans = $(this).parents('tbody').children('tr').children('td:last-child').children('span')
+            console.log($spans);
+            var nums = 0;
+            for(var i = 0;i<$spans.length;i++){
+                nums += parseInt($($spans[i]).text())
+            }
+            $(this).parents('tbody').next('tfoot').find('span').text(nums)
+
+        })
+
+        var $add  = $('tbody').children('tr').children('td:nth-child(3)').children('button:nth-child(3)')
+        $add.click(function () {
+            var num = parseInt($(this).prev('span').text());
+
+                num++;
+            $(this).prev('span').text(num)
+                var price = parseInt($(this).parent('td').prev('td').children('span').text());
+                var newprice = num * price;
+                $(this).parent('td').next('td').children('span').text(newprice)
+            var $spans = $(this).parents('tbody').children('tr').children('td:last-child').children('span')
+            var nums = 0;
+            for(var i = 0;i<$spans.length;i++){
+                nums += parseInt($($spans[i]).text())
+            }
+            $(this).parents('tbody').next('tfoot').find('span').text(nums)
+        })
+
+
+        /*for(var i = 0;i<$adds.length;i++){
+            var prices = 0
+
+            prices = parseInt($($adds[i]).text())
+            prices+=prices
+        }*/
+
+
+
+
+    </script>
+</body>
+</html>

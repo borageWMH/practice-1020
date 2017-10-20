@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <title>中心点逐渐放大效果</title>
+       <style type="text/css">
+           * {
+                     padding: 0;
+                     margin: 0;
+                 }
+            .content {
+                              /*  margin: 40px auto;
+                                width: 450px;
+                                height: 301px;
+                                z-index: 1000;
+                                overflow: hidden;
+                                border: 10px solid #808080;*/
+                            }
+             .content img {
+                              /* position: absolute;*/
+                                width: 450px;
+                               height: 301px;
+                               /*top: 0;
+                                left: 0;*/
+                                cursor: pointer;
+                               /* z-index: 100;*/
+                            }
+         </style>
+        <script src="jquery-1.12.4.js"></script>
+         <script type="text/javascript">
+             $(function () {
+                     var w = $(".pic").width();
+                     var h = $(".pic").height();
+                     var w2 = w + 20;
+                     var h2 = h + 20;
+
+                     $(".pic").hover(function () {
+                             $(this).stop().animate({ height: h2, width: w2, left: "-10px", top: "-10px" }, 400);
+                         }, function () {
+                             $(this).stop().animate({ height: h, width: w, left: "0px", top: "0px" }, 400);
+                         });
+                 });
+         </script>
+    </head>
+ <body>
+     <div class="content">
+            <img src="d1_03.png" class="pic" />
+        </div>
+ </body>
+ </html>

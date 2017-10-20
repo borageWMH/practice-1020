@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+      li {
+            width: 200px;
+            height: 239px;
+            margin-top: 18px;
+            float: left;
+            margin-right: 40px;
+            /*background: url(../images/yy.png) left bottom no-repeat;*/
+            position: relative;
+        }
+
+     li .ztvbox {
+            width: 170px;
+            height: 239px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+            margin-left: 15px;
+        }
+
+         li .ztvbox .titlec {
+            width: 150px;
+            height: 39px;
+            line-height: 34px;
+            text-align: center;
+            position: absolute;
+            /*background: url(../img/tmmn.png);*/
+            bottom: 29px;
+            left: 0;
+            font-size: 16px;
+            color: #FFF;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        li .ztvbox .titlec02 {
+            height: 126px;
+            width: 193px;
+            padding: 0px 0;
+            position: relative;
+            background: rgba(0,0,0,.6);
+            /*bottom: -50px;*/
+            left: 0;
+            color: #FFF;
+            /*display: none;*/
+            /*bottom: 2px;*/
+            margin-left: -12px;
+            padding-top: 20px;
+        }
+
+        li .ztvbox .titlec02 p {
+            width: 90%;
+            float: left;
+            text-align: center;
+            line-height: 22px;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 5%;
+        }
+
+         /*li .ztvbox .titlec02 p.jktop {*/
+            /*font-size: 16px;*/
+        /*}*/
+
+        .clear-both {
+            clear: both
+        }
+
+        /*li:hover .ztvbox .titlec {*/
+            /*display: none;*/
+        /*}*/
+
+       /*li:hover .titlec02 {*/
+            /*display: block;*/
+        /*}*/
+
+         li:hover .ztvbox .titlec02 {
+            margin-top: -47px;
+            transition: margin-top 1s;
+        }
+
+     li:hover .ztvbox .titlec {
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+         li .ztvbox .titlec {
+            width: 150px;
+            height: 55px;
+            background: rgba(0,0,0,.8);
+            position: absolute;
+            top: 182px;
+            left: 0;
+             display:none;
+        }
+
+        li:hover .dong1 {
+            animation: dong1 0.7s 1;
+            margin-top:21px;
+        }
+
+        li:hover .dong2 {
+            animation: dong2 0.8s 1;
+            margin-top: 19px;
+        }
+
+
+
+        /*鼠标移动效果动画*/
+
+       /* @keyframes dong1 {
+            0% {
+                margin-top: 67px;
+            }
+            100% {
+                margin-top: 20px;
+            }
+        }*/
+
+        /*@keyframes dong2 {
+            0% {
+                margin-top: 167px;
+            }
+            10% {
+                margin-top: 167px;
+            }
+            100% {
+                margin-top: 20px;
+            }
+        }*/
+
+
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>
+        <a href="#">
+            <div class="ztvbox">
+                <div style="width:170px;height:219px;background-color: #efefef;text-align: center;padding-top: 20px;">
+                    <img style="width:170px;height:219px;" src="d1_03.png">
+                </div>
+                <!--<div class="titlec">轮胎翻修工（高级）</div>
+-->
+                <div class="titlec02">
+                    <p class="dong1">轮胎翻修工（高级）</p>
+                  <!--  <p class="dong2">张立主编</p>
+              -->
+                </div>
+
+            </div>
+        </a>
+    </li>
+</ul>
+</body>
+</html>
